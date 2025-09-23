@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "./utilities.css";
+@import "./blocks/index.css";
+@import "./patterns/index.css";
+@import "./components/index.css";
+
+@theme {
+  --color-primary: #1e3a8a;
+  --color-secondary: #f97316;
+  --color-accent: #10b981;
+  --color-primary-dark: #eff6ff;
+  --color-secondary-dark: #fff7ed;
+  --color-accent-dark: #ecfdf5;
+  --color-text: #334155;
+  --color-border: #e5e7eb;
+  --color-body-bg: #f9fafb;
+  --color-whatsapp: #25d366;
+  --color-twitter: #1da1f2;
+  --color-linkedin: #0077b5;
+  --color-facebook: #3b5998;
+}
+html {
+  @apply transition-all duration-300 ease-in;
+  &.dark {
+    --background: #0c0c0c;
+    --foreground: #ededed;
+    --color-text: #f1f5f9;
+    --color-border: #1f2937;
+    --color-body-bg: #0f172a;
+  }
+}
+
+body {
+  @apply bg-red-400;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "swiftpress/phpcs",
+  "description": "A WordPress theme using PHPCS",
+  "type": "project",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "3.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "1.0",
+    "squizlabs/php_codesniffer": "3.9.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "lint": "PHPCS_IGNORE_WARNINGS_ON_EXIT=1 phpcs -s",
+    "fix": "phpcbf"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

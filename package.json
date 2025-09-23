@@ -1,0 +1,24 @@
+{
+  "name": "swiftpress",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A modern WordPress + TailwindCSS boilerplate for building fast WordPress themes made and managed by [Dapo Obembe](https://www.dapoobembe.com). This lightweight, performance-focused WordPress Tailwind boilerplate provides a solid foundation for custom WordPress theme development with TailwindCss, Vite and Advanced Custom Fields (ACF) integration.",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "clean": "rm -rf dist/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^6.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^4.1.12",
+    "vite": "^7.1.4"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.12"
+  }
+}
