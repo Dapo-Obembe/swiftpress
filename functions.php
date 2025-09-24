@@ -16,10 +16,8 @@ function include_inc_files() {
 	$files = array(
 		'./inc/block-styles/', // Register Core Block Styles..
 		'./inc/custom-functions/', // Custom functions that act independently of the theme templates.
-		'./inc/shortcodes/', // Shortcodes used in the theme.
 		'./inc/filters/', // All filtering actions.
 		'./inc/setup/', // Theme setup files.
-		'./inc/template-tags/', // Template tags.
 	);
 
 	foreach ( $files as $include ) {

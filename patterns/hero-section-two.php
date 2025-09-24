@@ -3,7 +3,6 @@
  * Title: Hero Section Two
  * Slug: swiftpress/hero-section-two
  * Categories: swiftpress_hero
-
  * Keywords: hero, banner, hero section
  * Description: A heading, text, button and an image in the background.
  */
