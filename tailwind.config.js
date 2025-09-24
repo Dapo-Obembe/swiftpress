@@ -3,8 +3,9 @@ export default {
   content: [
     "./**/*.php",
     "./assets/js/**/*.js",
-    "./acf-blocks/**/*.{php,js}",
+    "./blocks/**/*.css",
     "./assets/css/pages/**/*.css",
+    "./assets/css/blocks/**/*.css",
     "./assets/patterns/*.css",
   ],
   theme: {

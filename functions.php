@@ -8,18 +8,13 @@
  * @since 1.0
  */
 
-if(!defined('ABSPATH')) exit;
-
-/**
- * The theme version.
- *
- * @since 1.0.0
- */
-define( 'AWC_VERSION', wp_get_theme()->get( 'Version' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 function include_inc_files() {
 	$files = array(
-	
+		'./inc/block-styles/', // Register Core Block Styles..
 		'./inc/custom-functions/', // Custom functions that act independently of the theme templates.
 		'./inc/shortcodes/', // Shortcodes used in the theme.
 		'./inc/filters/', // All filtering actions.
@@ -44,12 +39,9 @@ function include_inc_files() {
 include_inc_files();
 
 /**
- * NOTE: Developer, do not add any custom functions in this file. 
+ * NOTE: Developer, do not add any custom functions in this file.
  * Find the relevant file to add your custom functions in the inc/ folder.
  * Or add them like inc/custom-functions/your-function-name.
- * 
+ *
  * Happy coding!!!
  */
-
-
-

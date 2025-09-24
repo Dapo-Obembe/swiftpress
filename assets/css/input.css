@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./utilities.css";
-@import "./blocks/index.css";
+/* @import "./blocks/index.css"; */
 @import "./patterns/index.css";
 @import "./components/index.css";
 

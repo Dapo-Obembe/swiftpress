@@ -1,0 +1,5 @@
+@reference "../input.css";
+
+.wp-block-button.is-style-swiftpress-primary .wp-block-button__link {
+  @apply bg-blue-600 text-2xl text-white rounded-lg;
+}

@@ -14,11 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Theme assets version.
 define( 'THEME_VERSION', wp_get_theme()->get( 'Version' ) );
 
+/**
+ * This function enqueues the swiftpress assets.
+ */
 function swiftpress_enqueue_assets() {
 	$dist_path = get_template_directory() . '/dist';
 	$dist_uri  = get_template_directory_uri() . '/dist';
 
-	// Load compiled CSS
+	// Load compiled CSS.
 	$css_file = $dist_path . '/style.css';
 	if ( file_exists( $css_file ) ) {
 		wp_enqueue_style(
@@ -29,7 +32,7 @@ function swiftpress_enqueue_assets() {
 		);
 	}
 
-	// Load compiled JS (if available)
+	// Load compiled JS (if available).
 	$js_file = $dist_path . '/app.js';
 	if ( file_exists( $js_file ) ) {
 		wp_enqueue_script(

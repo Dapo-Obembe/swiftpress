@@ -2,7 +2,7 @@
 /**
  * Title: Hero Section One
  * Slug: swiftpress/hero-section-one
- * Categories: awc_hero
+ * Categories: swiftpress_hero
  * Keywords: hero, banner, hero section
  * Description: A heading, text, button and an image.
  */
