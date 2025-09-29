@@ -1,9 +1,15 @@
 @import "tailwindcss";
 @import "./utilities.css";
-/* @import "./blocks/index.css"; */
 @import "./patterns/index.css";
 @import "./components/index.css";
 
+/*
+NOTE: If you clone this theme for custom development,
+you can map the colors you used in the theme.json to this
+Tailwindcss style. So that, you won't need to repeat the color codes.
+
+HAPPY CODING!!!
+*/
 @theme {
   --color-primary: #1e3a8a;
   --color-secondary: #f97316;
@@ -28,8 +34,4 @@ html {
     --color-border: #1f2937;
     --color-body-bg: #0f172a;
   }
-}
-
-body {
-  @apply bg-red-400;
 }

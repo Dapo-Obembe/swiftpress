@@ -1,6 +1,6 @@
-# swiftpress -Fullsite Editing Starter Theme
+# Swiftpress - WordPress Fullsite Editing Starter Theme
 
-A modern WordPress Fullsite Editing Starter Theme that uses Vite + TailwindCSS bfor crafting swift WordPress website via the Block theme approach.
+A modern WordPress Fullsite Editing Starter Theme that uses Vite + TailwindCSS for crafting swift WordPress website via the Block theme approach.
 
 ## Who is SwiftPress for?
 
@@ -48,6 +48,7 @@ This project is licensed under the GPL v2 or later.
 - TailwindCSS: https://tailwindcss.com
 - WordPress: https://wordpress.org
 - Github Updater: https://github.com/afragen/github-updater
+- Coolors: https://coolors.co/
 
 ## Contact
 

@@ -1,0 +1,233 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Black-Gold",
+	"settings": {
+		"color": {
+			"palette": [
+                {
+                "color": "#000000",
+                "name": "Black",
+                "slug": "black"
+                },
+                {
+                "color": "#14213D",
+                "name": "Navy Blue",
+                "slug": "navy-blue"
+                },
+                {
+                "color": "#FCA311",
+                "name": "Orange",
+                "slug": "orange"
+                },
+                {
+                "color": "#E5E5E5",
+                "name": "Light Gray",
+                "slug": "light-gray"
+                },
+                {
+                "color": "#FFFFFF",
+                "name": "White",
+                "slug": "white"
+                },
+                {
+                "color": "#1A2B52",
+                "name": "Navy Blue Dark",
+                "slug": "navy-blue-dark"
+                },
+                {
+                "color": "#2A3A67",
+                "name": "Navy Blue Light",
+                "slug": "navy-blue-light"
+                },
+                {
+                "color": "#FFB347",
+                "name": "Orange Light",
+                "slug": "orange-light"
+                },
+                {
+                "color": "#B8860B",
+                "name": "Orange Dark",
+                "slug": "orange-dark"
+                },
+                {
+                "color": "#F5F5F5",
+                "name": "Gray 100",
+                "slug": "gray-100"
+                },
+                {
+                "color": "#CCCCCC",
+                "name": "Gray 300",
+                "slug": "gray-300"
+                },
+                {
+                "color": "#999999",
+                "name": "Gray 500",
+                "slug": "gray-500"
+                },
+                {
+                "color": "#666666",
+                "name": "Gray 700",
+                "slug": "gray-700"
+                },
+                {
+                "color": "#333333",
+                "name": "Gray 800",
+                "slug": "gray-800"
+                }
+            ]
+		}
+	},
+	"styles": {
+        "color": {
+        "background": "var:preset|color|navy-blue",
+        "text": "var:preset|color|white"
+        },
+        "spacing": {
+        "blockGap": "1.2rem",
+        "padding": {
+            "left": "var:preset|spacing|50",
+            "right": "var:preset|spacing|50"
+        }
+        },
+        "typography": {
+        "fontFamily": "var:preset|font-family|manrope",
+        "fontSize": "var:preset|font-size|large",
+        "fontWeight": "300",
+        "letterSpacing": "-0.1px",
+        "lineHeight": "1.4"
+        },
+        "blocks": {
+        "core/avatar": {
+            "border": {
+            "radius": "100px"
+            }
+        },
+        "core/button": {
+            "variations": {
+            "outline": {
+                "border": {
+                "color": "var:preset|color|orange",
+                "width": "1px"
+                },
+                "css": ".wp-block-button__link:not(.has-background):hover {background-color:color-mix(in srgb, var(--wp--preset--color--orange) 5%, transparent);}",
+                "spacing": {
+                "padding": {
+                    "bottom": "calc(1rem - 1px)",
+                    "left": "calc(2.25rem - 1px)",
+                    "right": "calc(2.25rem - 1px)",
+                    "top": "calc(1rem - 1px)"
+                }
+                }
+            }
+            }
+        },
+        "core/code": {
+            "typography": {
+            "fontFamily": "var:preset|font-family|fira-code",
+            "fontSize": "var:preset|font-size|medium",
+            "fontWeight": "300"
+            },
+            "color": {
+            "background": "var:preset|color|black",
+            "text": "var:preset|color|light-gray"
+            },
+            "spacing": {
+            "padding": {
+                "right": "var:preset|spacing|40",
+                "bottom": "var:preset|spacing|40",
+                "left": "var:preset|spacing|40",
+                "top": "var:preset|spacing|40"
+            }
+            }
+        },
+        "core/comment-date": {
+            "typography": {
+            "fontSize": "var:preset|font-size|small"
+            },
+            "color": {
+            "text": "var:preset|color|gray-500"
+            },
+            "elements": {
+            "link": {
+                "color": {
+                "text": "var:preset|color|gray-500"
+                }
+            }
+            }
+        },
+        "core/separator": {
+            "border": {
+            "color": "var:preset|color|navy-blue-light",
+            "style": "solid",
+            "width": "0 0 1px 0"
+            },
+            "color": {
+            "text": "var:preset|color|navy-blue-light"
+            },
+            "variations": {
+            "wide": {
+                "css": " &:not(.alignfull){max-width: var(--wp--style--global--wide-size) !important;}"
+            }
+            }
+        }
+        },
+        "elements": {
+        "button": {
+            "color": {
+            "background": "var:preset|color|orange",
+            "text": "var:preset|color|black"
+            },
+            ":focus": {
+            "outline": {
+                "color": "var:preset|color|orange-light",
+                "offset": "2px"
+            }
+            },
+            ":hover": {
+            "color": {
+                "background": "var:preset|color|orange-light",
+                "text": "var:preset|color|black"
+            },
+            "border": {
+                "color": "transparent"
+            }
+            },
+            "spacing": {
+            "padding": {
+                "bottom": "1rem",
+                "left": "2.25rem",
+                "right": "2.25rem",
+                "top": "1rem"
+            }
+            },
+            "typography": {
+            "fontSize": "var:preset|font-size|medium"
+            }
+        },
+        "link": {
+            "color": {
+            "text": "var:preset|color|orange"
+            },
+            ":hover": {
+            "color": {
+                "text": "var:preset|color|orange-light"
+            },
+            "typography": {
+                "textDecoration": "none"
+            }
+            }
+        },
+        "heading": {
+            "color": {
+            "text": "var:preset|color|white"
+            },
+            "typography": {
+            "fontWeight": "400",
+            "lineHeight": "1.125",
+            "letterSpacing": "-0.1px"
+            }
+        }
+        }
+    }
+}

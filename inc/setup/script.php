@@ -4,7 +4,7 @@
  *
  * @package SwiftPress
  *
- * @author Dapo Obembe <https://www.swiftpress.com>
+ * @author Dapo Obembe <https://www.dapoobembe.com>
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
