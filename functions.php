@@ -4,8 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package AlphaWebConsult
- * @since 1.0
+ * @package SwiftPress
+ * @since 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
