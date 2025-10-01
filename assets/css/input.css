@@ -11,7 +11,7 @@ Tailwindcss style. So that, you won't need to repeat the color codes.
 HAPPY CODING!!!
 */
 @theme {
-  --color-primary: #1e3a8a;
+  --color-primary: var(--wp--preset--color--gray-900);
   --color-secondary: #f97316;
   --color-accent: #10b981;
   --color-primary-dark: #eff6ff;
@@ -34,4 +34,9 @@ html {
     --color-border: #1f2937;
     --color-body-bg: #0f172a;
   }
+}
+
+
+a{
+  @apply text-primary;
 }
