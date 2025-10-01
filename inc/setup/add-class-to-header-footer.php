@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return string Modified block content with additional CSS classes.
  */
-function inr_add_template_part_class( $block_content, $block ) {
+function swiftpress_add_template_part_class( $block_content, $block ) {
 	if ( isset( $block['attrs']['slug'] ) ) {
 		if ( 'header' === $block['attrs']['slug'] ) {
 			$block_content = str_replace( 'wp-block-template-part', 'wp-block-template-part site-header', $block_content );
@@ -36,4 +36,4 @@ function inr_add_template_part_class( $block_content, $block ) {
 	}
 	return $block_content;
 }
-add_filter( 'render_block_core/template-part', 'inr_add_template_part_class', 10, 2 );
+add_filter( 'render_block_core/template-part', 'swiftpress_add_template_part_class', 10, 2 );
