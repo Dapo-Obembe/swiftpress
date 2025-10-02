@@ -1,0 +1,97 @@
+{
+    "key": "group_68de4875ad69d",
+    "title": "Block: Link Wrapper",
+    "fields": [
+        {
+            "key": "field_68de487618121",
+            "label": "External Link?",
+            "name": "external_link",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Where is the link coming from? Your website or external website.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_68de48c818122",
+            "label": "Wrapper Link",
+            "name": "wrapper_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68de487618121",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "e.g https:\/\/"
+        },
+        {
+            "key": "field_68de48fb18123",
+            "label": "Onsite Wrapper Link",
+            "name": "onsite_wrapper_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Link to a page or post on this website",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68de487618121",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "swiftpress\/linkwrapper"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1759398508
+}

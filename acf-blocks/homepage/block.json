@@ -1,0 +1,21 @@
+{
+	"name": "acf/homepage",
+	"title": "Homepage",
+	"description": "Show Ready-made Homepage Block",
+	"category": "swiftpress-scf-blocks",
+	"icon": "block-default",
+	"style": ["swiftpress-tailwind-style", "file:./style.css"],
+	"script": ["homepage-script"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "homepage.php"
+	},
+	"supports": {
+		"align": true,
+		"anchor": true,
+		"spacing": {
+			"padding": ["top", "bottom"],
+			"margin": ["top", "bottom"]
+		}
+	}
+}

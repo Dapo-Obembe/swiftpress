@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./utilities.css";
 @import "./patterns/index.css";
+@import "./acf-blocks.css";
 @import "./components/index.css";
 
 /*
@@ -36,7 +37,8 @@ html {
   }
 }
 
-
-a{
-  @apply text-primary;
+body:not(.wp-admin) {
+  [data-animate] {
+    opacity: 0;
+  }
 }

@@ -1,0 +1,21 @@
+{
+	"name": "acf/linkwrapper",
+	"title": "Link",
+	"description": "Wrap any block with a link to redirect to another page or site.",
+	"category": "swiftpress-scf-blocks",
+	"icon": "links",
+	"style": ["swiftpress-tailwind-style", "file:./style.css"],
+	"script": ["link-script"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"align": true,
+		"anchor": true,
+		"spacing": {
+			"padding": ["top", "bottom"],
+			"margin": ["top", "bottom"]
+		}
+	}
+}

@@ -1,0 +1,7 @@
+/* Styles based on User actions */
+body.swiftpress-sticky-header header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: inherit;
+}

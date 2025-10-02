@@ -1,0 +1,8 @@
+/* 
+Import your acf block styles like so IF you did not style everything inisde the block markup.
+NOTE: In some scenerio, you will have to
+*/
+
+@import "../../acf-blocks/gallery/style.css";
+@import "../../acf-blocks/homepage/style.css";
+@import "../../acf-blocks/link/style.css";

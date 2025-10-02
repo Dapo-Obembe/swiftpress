@@ -1,0 +1,26 @@
+{
+	"name": "acf/image-gallery",
+	"title": "SwiftPress Gallery",
+	"description": "Add a sliding gallery to your post or page.",
+	"category": "swiftpress-scf-blocks",
+    "keywords": ["gallery", "slider", "image", "image carousel"],
+	"icon": "slides",
+	"style": ["swiftpress-tailwind-style", "swiper-style", "file:./style.css"],
+	"script": ["swiper-script", "gallery-script"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+    "supports": {
+    "align": ["wide", "full"],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "layout": true,
+    "spacing": {
+        "padding": ["top", "bottom"],
+        "margin": ["top", "bottom"]
+    }
+  }
+}

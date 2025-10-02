@@ -1,0 +1,12 @@
+.homepage {
+  .homepage__hero {
+    .title {
+      font-size: clamp(2rem, 1.1197rem + 3.7559vw, 4.5rem);
+      @apply font-extrabold;
+
+      span {
+        @apply text-red-400;
+      }
+    }
+  }
+}

@@ -12,9 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Include the files in the inc/.
+ */
 function include_inc_files() {
 	$files = array(
-		'./inc/block-styles/', // Register Core Block Styles..
+		'./inc/acf/', // ACF/SCF functions and filters.
+		'./inc/block-styles/', // Register Core Block Styles.
 		'./inc/custom-functions/', // Custom functions that act independently of the theme templates.
 		'./inc/filters/', // All filtering actions.
 		'./inc/setup/', // Theme setup files.
