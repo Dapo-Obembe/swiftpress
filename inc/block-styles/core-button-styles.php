@@ -9,18 +9,13 @@
 
 return array(
 	array(
-		'name'       => 'swiftpress-primary',
+		'name'       => 'swiftpress-primary-button',
 		'label'      => __( 'Primary', 'swiftpress' ),
 		'is_default' => false,
 	),
 	array(
-		'name'       => 'swiftpress-secondary',
+		'name'       => 'swiftpress-secondary-button',
 		'label'      => __( 'Secondary', 'swiftpress' ),
-		'is_default' => false,
-	),
-	array(
-		'name'       => 'swiftpress-outline',
-		'label'      => __( 'Outline', 'swiftpress' ),
 		'is_default' => false,
 	),
 );

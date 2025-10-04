@@ -1,0 +1,75 @@
+/* Overrides to Gutenberg properties */
+
+/* Remove the top margin on the footer */
+:where(.wp-site-blocks) > * {
+  margin-block-start: 0 !important;
+}
+
+/* Ensure alignwide elements also get proper padding */
+.has-global-padding {
+  padding-right: var(--wp--style--root--padding-right, 80px);
+  padding-left: var(--wp--style--root--padding-left, 80px);
+}
+
+/* Tablet responsive padding */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .has-global-padding {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+/* Mobile responsive padding */
+@media (max-width: 768px) {
+  .has-global-padding {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  /* Ensure smaller padding on very small screens */
+  @media (max-width: 480px) {
+    .has-global-padding {
+      padding-right: 14px;
+      padding-left: 14px;
+    }
+  }
+}
+
+/* Tablet overrides for specific blocks */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .wp-block-group.has-global-padding,
+  .wp-block-cover.has-global-padding {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+  }
+}
+
+/* Mobile overrides for specific blocks */
+@media (max-width: 768px) {
+  .wp-block-group.has-global-padding,
+  .wp-block-cover.has-global-padding {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+  }
+}
+
+/* Column Block */
+@media (max-width: 992px) {
+  .wp-block-columns {
+    flex-wrap: wrap !important;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wp-block-group.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-top: 45px !important;
+    padding-bottom: 40px !important;
+  }
+  .wp-block-group.alignfull {
+    padding-left: var(--wp--preset--spacing--30, 20px);
+    padding-right: var(--wp--preset--spacing--30, 20px);
+  }
+}

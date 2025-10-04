@@ -5,27 +5,13 @@
 @import "./components/index.css";
 
 /*
-NOTE: If you clone this theme for custom development,
-you can map the colors you used in the theme.json to this
-Tailwindcss style. So that, you won't need to repeat the color codes.
+NOTE: The theme.json fonts, spacing, colors, etc are generated
+to the tailwind.config.js when you run 'npm run build:theme'
+no need creating colors again.
 
 HAPPY CODING!!!
 */
-@theme {
-  --color-primary: var(--wp--preset--color--gray-900);
-  --color-secondary: #f97316;
-  --color-accent: #10b981;
-  --color-primary-dark: #eff6ff;
-  --color-secondary-dark: #fff7ed;
-  --color-accent-dark: #ecfdf5;
-  --color-text: #334155;
-  --color-border: #e5e7eb;
-  --color-body-bg: #f9fafb;
-  --color-whatsapp: #25d366;
-  --color-twitter: #1da1f2;
-  --color-linkedin: #0077b5;
-  --color-facebook: #3b5998;
-}
+
 html {
   @apply transition-all duration-300 ease-in;
   &.dark {

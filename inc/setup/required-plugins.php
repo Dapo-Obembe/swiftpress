@@ -36,7 +36,7 @@ function swiftpress_recommend_scf_notice() {
 		}
 
 		echo '<div class="notice notice-warning is-dismissible">
-			<p><strong>SwiftPress:</strong> You selected <em>ACF Blocks</em>, but <em>Secure Custom Fields</em> is not active. When installed and activated, Theme SCF Settings will be created inside the SwiftPress menu.</p>
+			<p><strong>SwiftPress:</strong> You selected <em>SCF/ACF Blocks</em> as the method of creating or using custom blocks with SwiftPress, but <em>Secure Custom Fields</em> is not active. When installed and activated, Theme SCF Settings will be created inside the SwiftPress menu.</p>
 			<p>' . $button . '</p>
 		</div>';
 	}
@@ -53,7 +53,7 @@ function swiftpress_recommend_fse_notice() {
 		return;
 	}
 
-	$method = get_option( 'swiftpress_block_method', 'fse' );
+	$method = get_option( 'swiftpress_block_method', 'scf' );
 
 	if ( 'fse' === $method && ! is_plugin_active( 'swift-fse-blocks/swift-fse-blocks.php' ) ) {
 
