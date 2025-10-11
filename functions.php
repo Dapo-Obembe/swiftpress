@@ -19,6 +19,7 @@ function include_inc_files() {
 	$files = array(
 		'./inc/acf/', // ACF/SCF functions and filters.
 		'./inc/block-styles/', // Register Core Block Styles.
+		'./inc/block-variations/', // Register Core Block variations.
 		'./inc/custom-functions/', // Custom functions that act independently of the theme templates.
 		'./inc/filters/', // All filtering actions.
 		'./inc/setup/', // Theme setup files.

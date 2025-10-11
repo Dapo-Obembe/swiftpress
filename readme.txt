@@ -1,8 +1,8 @@
 === SwiftPress ===
-Contributors: Dapo Obembe
+Contributors: dapson1
 Tags: full-site-editing, block-theme, blog, accessibility-ready, custom-colors, custom-background, custom-logo, custom-menu, editor-style, featured-images, translation-ready, one-column, two-columns, wide-blocks
-Tested up to: 6.3
-Requires at least: 6.3
+Tested up to: 6.8
+Requires at least: 6.7
 Requires PHP: 7.4
 Stable tag: 1.0.0
 Version: 1.0.0
