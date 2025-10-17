@@ -2,8 +2,6 @@
 Theme Name: SwiftPress
 Author: Dapo Obembe
 Author URI: https://www.dapoobembe.com
-Github Theme URI: https://github.com/Dapo-Obembe/swiftpress
-Release Asset: true
 Theme URI: https://github.com/Dapo-Obembe/swiftpress
 Description: Super-fast Fullsite Editing Theme for your custom WordPress solutions and for developers and designers.
 Tags: full-site-editing, editor-style, block-styles, block-patterns
@@ -12,7 +10,10 @@ Requires at least: 6.3
 Requires PHP: 7.4
 Requires Plugins: secure-custom-fields, swift-fse-blocks, wordpress-seo
 Tested up to: 6.3
-Version: 1.0.1
+Version: 1.0.2
+GitHub Theme URI: Dapo-Obembe/swiftpress
+Primary Branch: main
+Release Asset: true
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
