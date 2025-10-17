@@ -23,7 +23,7 @@ jobs:
       # 3. Install dependencies and run the master package script
       - name: Install dependencies and create release zip
         run: |
-          npm ci
+          npm install
           npm run package
 
       # 4. Create a GitHub Release and upload the generated zip file
