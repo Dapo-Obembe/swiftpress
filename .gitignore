@@ -13,6 +13,9 @@ sourcemaps/
 vendor/
 *.map
 
+# Production build package
+*.zip
+
 # System files
 .DS_Store
 Thumbs.db

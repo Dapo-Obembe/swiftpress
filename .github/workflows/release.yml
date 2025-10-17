@@ -1,0 +1,33 @@
+name: Create Theme Release ZIP
+
+on:
+  push:
+    tags:
+      - "v*.*.*" # Runs on any tag like v1.0.0, v1.0.1, etc.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checks out a copy of your repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Sets up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 3. Install dependencies and run the master package script
+      - name: Install dependencies and create release zip
+        run: |
+          npm ci
+          npm run package
+
+      # 4. Create a GitHub Release and upload the generated zip file
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: swiftpress.zip # Uploads the final zip file

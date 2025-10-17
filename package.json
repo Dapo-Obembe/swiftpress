@@ -6,13 +6,19 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "clean": "rm -rf dist/",
-    "build:theme": "node build-theme.js"
+    "clean": "rm -rf dist/ swiftpress.zip",
+    "build:theme": "node build-theme.js",
+    "package": "npm run clean && npm run build:theme && npm run build && node package.js"
   },
-  "keywords": ["fse", "block theme", "starter theme"],
+  "keywords": [
+    "fse",
+    "block theme",
+    "starter theme"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "archiver": "^7.0.1",
     "autoprefixer": "^10.4.0",
     "cssnano": "^6.0.0",
     "postcss": "^8.4.0",

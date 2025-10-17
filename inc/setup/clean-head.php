@@ -59,3 +59,30 @@ add_action(
 		add_filter( 'emoji_svg_url', '__return_false' );
 	}
 );
+
+
+// Remove unnecessary WordPress block editor scripts from frontend
+function remove_block_library_css_js() {
+    if (!is_admin()) {
+        // Remove block editor CSS
+        wp_dequeue_style('wp-block-library');
+        wp_dequeue_style('wp-block-library-theme');
+        wp_dequeue_style('wc-blocks-style');
+        wp_dequeue_style('global-styles');
+        
+        // Remove block editor JS
+        wp_dequeue_script('wp-block-library');
+        wp_deregister_script('wp-block-library');
+    }
+}
+add_action('wp_enqueue_scripts', 'remove_block_library_css_js', 100);
+
+// Remove inline scripts that depend on wp.date, wp.preferences, etc.
+function remove_wp_inline_scripts() {
+    if (!is_admin()) {
+        wp_deregister_script('wp-date');
+        wp_deregister_script('wp-preferences');
+        wp_deregister_script('wp-preferences-persistence');
+    }
+}
+add_action('wp_enqueue_scripts', 'remove_wp_inline_scripts', 100);
