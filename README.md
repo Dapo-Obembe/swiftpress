@@ -1,10 +1,10 @@
-# Swiftpress - WordPress Fullsite Editing Starter Theme
+# Swiftpress - WordPress Fullsite Editing Theme
 
-A modern WordPress Fullsite Editing Starter Theme that uses Vite + TailwindCSS for crafting swift WordPress website via the Block theme approach.
+A modern WordPress Fullsite Editing Theme that uses Vite + TailwindCSS for crafting swift WordPress website via the Block theme approach.
 
 ## Who is SwiftPress for?
 
-This FSE WordPress starter theme is for developers who would love to use WordPress and build a custom solutions via the FSE approach. Non-developers can use it but its made for developers who may want to programmatically perform some magics.
+This FSE WordPress theme is for developers who would love to use WordPress and build a custom solutions via the FSE approach. Non-developers can use also it. Just know a little bit of Tailwindcss and vanilla JS.
 
 ## Features
 
@@ -18,27 +18,36 @@ This FSE WordPress starter theme is for developers who would love to use WordPre
 
 - Pre-made patterns you can use to kickstart your development
 - Working files on how to create patterns and custom core blocks styles for your clients
-- Ability to chose either ACF or React-based(wordpress create-block) Blocks
+- Ability to choose/use either ACF or React-based(wordpress create-block) Blocks
 
 ## Requirement
 
-1. Git Update Plugin.
-2. Ability to use Vite, Tailwindcss (in case you want to extend)
+1. Ability to use Vite, Tailwindcss, ES Module script importation (in case you want to extend)
 
-## Installation & Updates Guides (to be updated soon)
+## Installation & Updates Guides (2 methods)
+
+A): Download the latest release, upload and activate on your WordPress site (Recommended).
+
+B): Install via GitHub Updater plugin by following the guide below:
 
 1. Install GitHub Updater: Download from: https://github.com/afragen/github-updater Or install via WP CLI: `wp plugin install github-updater --activate`
 2. Upload/Install this theme to WordPress via the Install Theme tab on Github Updater. Use `https://github.com/Dapo-Obembe/swiftpress` Branch is main.
 3. Updates appear automatically in WordPress admin whenener there are any.
 
+Documentation: Visit `https://www.swiftpresstheme.com` (Will soon be live).
+
+NOTE: Demos are coming...
+
 ## How to use SwiftPress as a Developer
+
+To use this theme as a developer, follow the guide below:
 
 1. Git clone this repo or install and create a child theme
 2. Run `composer install` to make it ready for WPCS PHPCS
 3. Run `npm install` to install the packages
 4. Run `npm run build:theme` to autogenerate the tailwind.config.js and theme.json. Run it again anytime you make changes to any of the jon files. DO NOT DIRECTLY EDIT YOUR THEME.JSON
 5. Run `npm run dev` to start development
-6. Run `npm run build to build for production.
+6. Run `npm run build` to build for production.
 
 ## Best Way To Make Changes Programmatically
 
@@ -54,7 +63,7 @@ This project is licensed under the GPL v2 or later.
 
 ## Credits
 
-- Built by [Dapo Obembe]: https://www.dapoobembe.com
+- Built by Dapo Obembe: https://www.dapoobembe.com
 - TailwindCSS: https://tailwindcss.com
 - WordPress: https://wordpress.org
 - Github Updater: https://github.com/afragen/github-updater

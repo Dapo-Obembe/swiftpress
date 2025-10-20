@@ -1,0 +1,12 @@
+/.git
+/.github
+/node_modules
+/src
+package.json
+package-lock.json
+.gitignore
+.distignore
+vite.config.js
+build-theme.js
+package.js
+*.log

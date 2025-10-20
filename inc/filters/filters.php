@@ -2,7 +2,7 @@
 /**
  * Filters
  *
- * @package AlphaWebConsult
+ * @package SwiftPress
  * @since 1.0.0
  */
 
