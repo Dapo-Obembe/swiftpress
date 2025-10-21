@@ -33,7 +33,7 @@ function swiftpress_render_settings_page() {
 	?>
 	<div class="wrap">
 		<h1><?php esc_html_e( 'SwiftPress Settings', 'swiftpress' ); ?></h1>
-		<p><?php esc_html_e( 'Welcome to your SwiftPress’s settings page!', 'swiftpress' ); ?></p> 
+		<p><?php esc_html_e( 'Welcome to your SwiftPress\'s settings page!', 'swiftpress' ); ?></p> 
 		<p><?php esc_html_e( 'Configure your SwiftPress theme options below.', 'swiftpress' ); ?></p>
 
 		<h2 class="nav-tab-wrapper">
@@ -43,8 +43,8 @@ function swiftpress_render_settings_page() {
 			<a href="?page=swiftpress-settings&tab=blocks" class="nav-tab <?php echo 'blocks' === $active_tab ? 'nav-tab-active' : ''; ?>">
 				<?php esc_html_e( 'Blocks', 'swiftpress' ); ?>
 			</a>
-			<a href="?page=swiftpress-settings&tab=layout" class="nav-tab <?php echo 'layout' === $active_tab ? 'nav-tab-active' : ''; ?>">
-				<?php esc_html_e( 'Layout', 'swiftpress' ); ?>
+			<a href="?page=swiftpress-settings&tab=recommended_plugins" class="nav-tab <?php echo 'recommended_plugins' === $active_tab ? 'nav-tab-active' : ''; ?>">
+				<?php esc_html_e( 'Recommended Plugins', 'swiftpress' ); ?>
 			</a>
 		</h2>
 
@@ -58,9 +58,9 @@ function swiftpress_render_settings_page() {
 			} elseif ( 'blocks' === $active_tab ) {
 				settings_fields( 'swiftpress_options_blocks' );
 				do_settings_sections( 'swiftpress-settings-blocks' );
-			} elseif ( 'layout' === $active_tab ) {
-				settings_fields( 'swiftpress_options_layout' );
-				do_settings_sections( 'swiftpress-settings-layout' );
+			} elseif ( 'recommended_plugins' === $active_tab ) {
+				settings_fields( 'swiftpress_options_recommended_plugins' );
+				do_settings_sections( 'swiftpress-settings-recommended-plugins' );
 			}
 			submit_button();
 			?>
@@ -109,22 +109,22 @@ function swiftpress_register_settings() {
 		'swiftpress_blocks_section'
 	);
 
-	// === Layout tab ===
-	register_setting( 'swiftpress_options_layout', 'swiftpress_container_width' );
+	// === Recommended plugins tab ===
+	register_setting( 'swiftpress_options_recommended_plugins', 'swiftpress_recommended_plugins' );
 
 	add_settings_section(
-		'swiftpress_layout_section',
-		__( 'Layout Settings', 'swiftpress' ),
+		'swiftpress_recommended_plugins_section',
+		__( 'Recommended Plugins Settings', 'swiftpress' ),
 		'__return_false',
-		'swiftpress-settings-layout'
+		'swiftpress-settings-recommended-plugins'
 	);
 
 	add_settings_field(
-		'swiftpress_container_width',
-		__( 'Container Width (px)', 'swiftpress' ),
-		'swiftpress_container_width_callback',
-		'swiftpress-settings-layout',
-		'swiftpress_layout_section'
+		'swiftpress_recommended_plugins',
+		__( 'Recommended Plugins', 'swiftpress' ),
+		'swiftpress_recommended_plugins_callback',
+		'swiftpress-settings-recommended-plugins',
+		'swiftpress_recommended_plugins_section'
 	);
 }
 add_action( 'admin_init', 'swiftpress_register_settings' );
@@ -158,12 +158,82 @@ function swiftpress_block_method_callback() {
 }
 
 /**
- * Set the container width.
+ * Display recommended plugins list.
  */
-function swiftpress_container_width_callback() {
-	$value = get_option( 'swiftpress_container_width', '1200' );
-	?>
-	<input type="number" name="swiftpress_container_width" value="<?php echo esc_attr( $value ); ?>" class="small-text" />
-	<p class="description"><?php esc_html_e( 'Set the maximum container width in pixels.', 'swiftpress' ); ?></p>
-	<?php
+function swiftpress_recommended_plugins_callback() {
+    $plugins = array(
+        array(
+            'name'        => 'Swift Block Animation',
+            'slug'        => 'swift-block-animation',
+            'description' => 'Add entrance animations to your blocks with stagger effect.',
+            'source'      => 'custom',
+            'download_url' => 'https://www.dapoobembe.com/downloads/swift-block-animation.zip',
+        ),
+        array(
+            'name'        => 'Yoast SEO',
+            'slug'        => 'wordpress-seo',
+            'description' => 'Improve your WordPress SEO rankings and visibility.',
+            'source'      => 'wordpress',
+        ),
+    );
+    ?>
+    <p class="description"><?php esc_html_e( 'Below are plugins we recommend for use with SwiftPress theme. Install only those you need.', 'swiftpress' ); ?></p>
+    <table class="wp-list-table widefat fixed striped" style="max-width: 900px; margin-top: 15px; padding:1rem;">
+        <thead>
+            <tr>
+                <th><?php esc_html_e( 'Plugin Name', 'swiftpress' ); ?></th>
+                <th><?php esc_html_e( 'Description', 'swiftpress' ); ?></th>
+                <th><?php esc_html_e( 'Status', 'swiftpress' ); ?></th>
+                <th><?php esc_html_e( 'Action', 'swiftpress' ); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ( $plugins as $plugin ) : ?>
+                <?php
+                $plugin_file  = $plugin['slug'] . '/' . $plugin['slug'] . '.php';
+                $is_installed = file_exists( WP_PLUGIN_DIR . '/' . $plugin_file );
+                $is_active    = is_plugin_active( $plugin_file );
+                $source       = isset( $plugin['source'] ) ? $plugin['source'] : 'wordpress';
+                ?>
+                <tr>
+                    <td><strong><?php echo esc_html( $plugin['name'] ); ?></strong></td>
+                    <td><?php echo esc_html( $plugin['description'] ); ?></td>
+                    <td>
+                        <?php if ( $is_active ) : ?>
+                            <span style="color: #46b450;">● <?php esc_html_e( 'Active', 'swiftpress' ); ?></span>
+                        <?php elseif ( $is_installed ) : ?>
+                            <span style="color: #ffb900;">● <?php esc_html_e( 'Installed', 'swiftpress' ); ?></span>
+                        <?php else : ?>
+                            <span style="color: #dc3232;">● <?php esc_html_e( 'Not Installed', 'swiftpress' ); ?></span>
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <?php if ( $is_active ) : ?>
+                            <span style="color: #888;"><?php esc_html_e( 'Active', 'swiftpress' ); ?></span>
+                        <?php elseif ( $is_installed ) : ?>
+                            <a href="<?php echo esc_url( wp_nonce_url( admin_url( 'plugins.php?action=activate&plugin=' . $plugin_file ), 'activate-plugin_' . $plugin_file ) ); ?>" class="button button-primary button-small">
+                                <?php esc_html_e( 'Activate', 'swiftpress' ); ?>
+                            </a>
+                        <?php else : ?>
+                            <?php if ( $source === 'custom' && isset( $plugin['download_url'] ) ) : ?>
+                                <a href="<?php echo esc_url( $plugin['download_url'] ); ?>" class="button button-secondary button-small" download>
+                                    <?php esc_html_e( 'Download', 'swiftpress' ); ?>
+                                </a>
+                            <?php else : ?>
+                                <a href="<?php echo esc_url( admin_url( 'plugin-install.php?s=' . urlencode( $plugin['slug'] ) . '&tab=search&type=term' ) ); ?>" class="button button-secondary button-small">
+                                    <?php esc_html_e( 'Install', 'swiftpress' ); ?>
+                                </a>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <p style="margin-top: 15px;">
+        <a href="<?php echo esc_url( admin_url( 'plugin-install.php' ) ); ?>" class="button button-secondary">
+            <?php esc_html_e( 'Browse Plugins', 'swiftpress' ); ?>
+        </a>
+    </p>
+    <?php
 }

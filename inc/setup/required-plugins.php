@@ -43,8 +43,6 @@ function swiftpress_recommend_scf_notice() {
 }
 add_action( 'admin_notices', 'swiftpress_recommend_scf_notice' );
 
-
-
 /**
  * Recommend Swift FSE Blocks when chosen
  */

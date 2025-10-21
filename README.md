@@ -4,7 +4,7 @@ A modern WordPress Fullsite Editing Theme that uses Vite + TailwindCSS for craft
 
 ## Who is SwiftPress for?
 
-This FSE WordPress theme is for developers who would love to use WordPress and build a custom solutions via the FSE approach. Non-developers can use also it. Just know a little bit of Tailwindcss and vanilla JS.
+This FSE WordPress theme is for WordPress developers and designers who would love to use WordPress and build a custom solutions via the FSE approach. Just know a little bit of Tailwindcss and vanilla JS in case you want to use the child theme.
 
 ## Features
 
@@ -18,7 +18,7 @@ This FSE WordPress theme is for developers who would love to use WordPress and b
 
 - Pre-made patterns you can use to kickstart your development
 - Working files on how to create patterns and custom core blocks styles for your clients
-- Ability to choose/use either ACF or React-based(wordpress create-block) Blocks
+- Ability to choose/use either ACF or React-based(wordpress create-block) Blocks creation methods.
 
 ## Requirement
 
@@ -28,7 +28,7 @@ This FSE WordPress theme is for developers who would love to use WordPress and b
 
 Download the latest release, upload and activate on your WordPress site (Recommended). You also get updates when they are made.
 
-Documentation: Visit `https://www.swiftpresstheme.com` (Will soon be live).
+Documentation: Visit https://www.swiftpresstheme.com (Will soon be live).
 
 NOTE: Demos are coming...
 
@@ -51,6 +51,10 @@ Create a Child theme for SwiftPress so you don't lose your changes (made to the 
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## Sponsorhip
+
+If you'd love to sponsor SwiftPress, please do. It will help reach wider audiences and more cool features.
+
 ## License
 
 This project is licensed under the GPL v2 or later.
@@ -60,7 +64,6 @@ This project is licensed under the GPL v2 or later.
 - Built by Dapo Obembe: https://www.dapoobembe.com
 - TailwindCSS: https://tailwindcss.com
 - WordPress: https://wordpress.org
-- Github Updater: https://github.com/afragen/github-updater
 - Coolors: https://coolors.co/
 
 ## Contact

@@ -1,10 +1,15 @@
 <?php
 /**
- * Handles theme updates from a author's server
+ * Handles theme updates from Dapo Obembe's server
+ * Specifically for SwiftPress theme.
+ * 
+ * @package SwiftPress
+ * 
+ * @author Dapo Obembe <https://www.dapoobembe.com>
  */
 class CustomThemeUpdater {
 	private $server_url;
-	private $theme_slug;
+	private $theme_slug = 'swiftpress';
 	private $version;
 	private $license_key;
 
@@ -12,10 +17,9 @@ class CustomThemeUpdater {
 		$this->server_url  = $server_url;
 		$this->license_key = $license_key;
 
-		// Current theme info
-		$theme            = wp_get_theme();
-		$this->theme_slug = $theme->get_stylesheet();
-		$this->version    = $theme->get( 'Version' );
+		// Get current version.
+		$theme = wp_get_theme();
+		$this->version = $theme->get('Version');
 
 		add_filter( 'pre_set_site_transient_update_themes', array( $this, 'check_for_update' ) );
 	}

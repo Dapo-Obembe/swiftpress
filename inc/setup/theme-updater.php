@@ -1,12 +1,12 @@
 <?php
 /**
- * Handles theme updates from a custom server
+ * Handles theme updates from a Author's server
  *
  * @package SwiftPress
  *
  * @author Dapo Obembe <https://www.dapoobembe.com>
  *
- * NOTE: DO not remove if you did not clone this starter theme.
+ * NOTE: DO not remove if you did not clone this theme.
  */
 
 if ( is_admin() ) {

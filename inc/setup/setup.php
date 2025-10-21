@@ -1,6 +1,10 @@
 <?php
 /**
  * Theme setup files.
+ * 
+ * @package SwiftPress
+ * 
+ * @author Dapo Obembe <https://www.dapoobembe.com>
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
