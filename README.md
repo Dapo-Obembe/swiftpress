@@ -26,13 +26,7 @@ This FSE WordPress theme is for developers who would love to use WordPress and b
 
 ## Installation & Updates Guides (2 methods)
 
-A): Download the latest release, upload and activate on your WordPress site (Recommended).
-
-B): Install via GitHub Updater plugin by following the guide below:
-
-1. Install GitHub Updater: Download from: https://github.com/afragen/github-updater Or install via WP CLI: `wp plugin install github-updater --activate`
-2. Upload/Install this theme to WordPress via the Install Theme tab on Github Updater. Use `https://github.com/Dapo-Obembe/swiftpress` Branch is main.
-3. Updates appear automatically in WordPress admin whenener there are any.
+Download the latest release, upload and activate on your WordPress site (Recommended). You also get updates when they are made.
 
 Documentation: Visit `https://www.swiftpresstheme.com` (Will soon be live).
 
