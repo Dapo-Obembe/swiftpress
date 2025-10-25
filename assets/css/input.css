@@ -1,6 +1,8 @@
 @import "tailwindcss";
+
 @import "./utilities.css";
 @import "./patterns/index.css";
+@import "./user-settings/index.css";
 @import "./acf-blocks.css";
 @import "./components/index.css";
 

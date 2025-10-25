@@ -75,6 +75,16 @@ function swiftpress_render_settings_page() {
 function swiftpress_register_settings() {
 	// === General tab settings ===
 	register_setting( 'swiftpress_options_general', 'swiftpress_enable_sticky_header' );
+	register_setting( 'swiftpress_options_general', 'swiftpress_preloader_option' );
+	register_setting( 'swiftpress_options_general', 'swiftpress_preloader_bg_color', [
+        'sanitize_callback' => 'sanitize_hex_color',
+        'default'           => '#ffffff',
+    ] );
+	register_setting( 'swiftpress_options_general', 'swiftpress_page_transition_direction', [
+		'sanitize_callback' => 'sanitize_text_field',
+		'default'           => 'fade',
+	] );
+
 
 	add_settings_section(
 		'swiftpress_general_section',
@@ -83,6 +93,7 @@ function swiftpress_register_settings() {
 		'swiftpress-settings-general'
 	);
 
+	// 1. Sticky Header.
 	add_settings_field(
 		'swiftpress_enable_sticky_header',
 		__( 'Enable Sticky Header', 'swiftpress' ),
@@ -90,6 +101,34 @@ function swiftpress_register_settings() {
 		'swiftpress-settings-general',
 		'swiftpress_general_section'
 	);
+
+	// 2. Preloader
+	add_settings_field(
+		'swiftpress_enable_preloader',
+		__( 'Enable Preloader', 'swiftpress' ),
+		'swiftpress_preloader_callback',
+		'swiftpress-settings-general',
+		'swiftpress_general_section'
+	);
+
+	// 3. Preloader Background color.
+	add_settings_field(
+        'swiftpress_preloader_bg_color',
+        __( 'Preloader Background Color', 'swiftpress' ),
+        'swiftpress_preloader_bg_color_callback',
+        'swiftpress-settings-general',
+        'swiftpress_general_section'
+    );
+
+	// 4. Page Preloader/Transition Directiona.
+	add_settings_field(
+		'swiftpress_page_transition_direction',
+		__( 'Page Transition Direction', 'swiftpress' ),
+		'swiftpress_page_transition_direction_callback',
+		'swiftpress-settings-general',
+		'swiftpress_general_section'
+	);
+
 
 	// === Blocks tab ===
 	register_setting( 'swiftpress_options_blocks', 'swiftpress_block_method' );
@@ -131,7 +170,7 @@ add_action( 'admin_init', 'swiftpress_register_settings' );
 
 
 /**
- * Field Callbacks
+ * Sticky Header Field Callbacks
  */
 function swiftpress_sticky_header_callback() {
 	$value = get_option( 'swiftpress_enable_sticky_header', 0 );
@@ -142,6 +181,77 @@ function swiftpress_sticky_header_callback() {
 	</label>
 	<?php
 }
+
+/**
+ * Preloader Field Callbacks.
+ */
+function swiftpress_preloader_callback() {
+    $value = get_option( 'swiftpress_preloader_option', 'none' );
+    ?>
+    <label for="swiftpress_preloader_option">
+        <select name="swiftpress_preloader_option" id="swiftpress_preloader_option">
+            <option value="none" <?php selected( $value, 'none' ); ?>>
+                <?php esc_html_e( 'None (Disabled)', 'swiftpress' ); ?>
+            </option>
+            <option value="plain" <?php selected( $value, 'plain' ); ?>>
+                <?php esc_html_e( 'Plain Preloader', 'swiftpress' ); ?>
+            </option>
+            <option value="logo" <?php selected( $value, 'logo' ); ?>>
+                <?php esc_html_e( 'Preloader with Logo', 'swiftpress' ); ?>
+            </option>
+        </select>
+    </label>
+    <p class="description-top">
+        <?php esc_html_e( 'Choose the preloader style displayed before pages load.', 'swiftpress' ); ?>
+	</p>
+    <p class="description-note">
+        <?php esc_html_e( 'NOTE: Page transition won\'t work if you do not enable preloader.', 'swiftpress' ); ?>
+    </p>
+    <?php
+}
+
+/**
+ * Preloader Background COlor Callback.
+ */
+function swiftpress_preloader_bg_color_callback() {
+    $value = get_option( 'swiftpress_preloader_bg_color', '#ffffff' );
+    ?>
+    <input 
+        type="color" 
+        name="swiftpress_preloader_bg_color" 
+        value="<?php echo esc_attr( $value ); ?>" 
+        />
+    <p class="description">
+        <?php esc_html_e( 'Choose the background color of the preloader.', 'swiftpress' ); ?>
+    </p>
+    <?php
+}
+
+/**
+ * Page Transition Direction Callback.
+ */
+function swiftpress_page_transition_direction_callback() {
+    $value = get_option( 'swiftpress_page_transition_direction', 'fade' );
+    ?>
+    <select name="swiftpress_page_transition_direction" id="swiftpress_page_transition_direction">
+        <option value="fade" <?php selected( $value, 'fade' ); ?>>
+            <?php esc_html_e( 'Fade (Default)', 'swiftpress' ); ?>
+        </option>
+        <option value="slide-up" <?php selected( $value, 'slide-up' ); ?>>
+            <?php esc_html_e( 'Slide Up', 'swiftpress' ); ?>
+        </option>
+        <option value="slide-down" <?php selected( $value, 'slide-down' ); ?>>
+            <?php esc_html_e( 'Slide Down', 'swiftpress' ); ?>
+        </option>
+    </select>
+    <p class="description">
+        <?php esc_html_e( 'Select the direction for page transition animations.', 'swiftpress' ); ?>
+    </p>
+    <?php
+}
+
+
+
 
 /**
  * Handles how blocks will be used or created.
@@ -163,11 +273,18 @@ function swiftpress_block_method_callback() {
 function swiftpress_recommended_plugins_callback() {
     $plugins = array(
         array(
+            'name'        => 'Swift FSE Blocks',
+            'slug'        => 'swift-fse-blocks',
+            'description' => 'Use custom blocks to make your Block theme website better and faster',
+            'source'      => 'custom',
+            'download_url' => 'https://www.dapoobembe.com/wp-content/uploads/plugins/swift-block-animation/latest/swift-block-animation.zip',
+        ),
+        array(
             'name'        => 'Swift Block Animation',
             'slug'        => 'swift-block-animation',
             'description' => 'Add entrance animations to your blocks with stagger effect.',
             'source'      => 'custom',
-            'download_url' => 'https://www.dapoobembe.com/downloads/swift-block-animation.zip',
+            'download_url' => 'https://www.dapoobembe.com/wp-content/uploads/plugins/swift-block-animation/latest/swift-block-animation.zip',
         ),
         array(
             'name'        => 'Yoast SEO',

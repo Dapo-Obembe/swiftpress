@@ -1,8 +1,7 @@
 import { websiteAnimations } from "./components/animation.js";
+import { themePreloader } from "./components/preloader.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  //You can import your scripts above and consitionally initialize them here.
-  console.log("Theme script is loaded!");
-
   websiteAnimations();
+  themePreloader();
 });

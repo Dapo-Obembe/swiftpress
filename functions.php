@@ -23,6 +23,7 @@ function include_inc_files() {
 		'./inc/custom-functions/', // Custom functions that act independently of the theme templates.
 		'./inc/filters/', // All filtering actions.
 		'./inc/setup/', // Theme setup files.
+		'./inc/theme-options/', // Theme options files.
 	);
 
 	foreach ( $files as $include ) {
